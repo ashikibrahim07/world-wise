@@ -8,7 +8,7 @@ import {
   useCallback,
 } from "react";
 
-const BASE_URL = "http://localhost:8000";
+const BASE_URL = "https://world-wise-plum-psi.vercel.app";
 
 const CitiesContext = createContext();
 
