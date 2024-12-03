@@ -1,0 +1,28 @@
+{
+  "cities": [
+    {
+      "id": "73e5",
+      "cityName": "Perunavalur",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-11-28T14:36:05.535Z",
+      "notes": "",
+      "position": {
+        "lat": "10.093177512942125",
+        "lng": "79.01032447814943"
+      }
+    },
+    {
+      "id": "4506",
+      "cityName": "Arantangi",
+      "country": "India",
+      "emoji": "🇮🇳",
+      "date": "2024-12-03T03:22:56.840Z",
+      "notes": "",
+      "position": {
+        "lat": "10.16761547789759",
+        "lng": "78.99238586425783"
+      }
+    }
+  ]
+}
