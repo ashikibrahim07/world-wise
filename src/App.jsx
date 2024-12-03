@@ -13,14 +13,7 @@ import City from "./components/City";
 import Form from "./components/Form";
 import SpinnerFullPage from "./components/SpinnerFullPage";
 
-// import HomePage from "./pages/HomePage";
-// import Product from "./pages/Product";
-// import Pricing from "./pages/Pricing";
-// import Login from "./pages/Login";
-// import Applayout from "./pages/Applayout";
-// import PageNotFound from "./pages/PageNotFound";
-
-const HomePage = lazy(() => import("./pages/HomePage"));
+const Homepage = lazy(() => import("./pages/Homepage"));
 const Product = lazy(() => import("./pages/Product"));
 const Pricing = lazy(() => import("./pages/Pricing"));
 const Login = lazy(() => import("./pages/Login"));
@@ -34,7 +27,7 @@ function App() {
         <BrowserRouter>
           <Suspense fallback={<SpinnerFullPage />}>
             <Routes>
-              <Route index element={<HomePage />} />
+              <Route index element={<Homepage />} />
               <Route path="product" element={<Product />} />
               <Route path="pricing" element={<Pricing />} />
               <Route path="login" element={<Login />} />
