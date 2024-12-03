@@ -11,7 +11,7 @@ import {
 const BASE_URL =
   window.location.hostname === "localhost"
     ? "http://localhost:8000"
-    : "https://world-wise-plum-psi.vercel.app";
+    : "https://imported-regular-coconut.glitch.me";
 
 const CitiesContext = createContext();
 
@@ -65,7 +65,7 @@ function CityProvider({ children }) {
     async function fetchCities() {
       dispatch({ type: "loaded" });
       try {
-        const res = await fetch(`${BASE_URL}/api/cities`);
+        const res = await fetch(`${BASE_URL}/cities`);
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
         }
@@ -87,7 +87,7 @@ function CityProvider({ children }) {
       if (!id || id === currentCity.id) return;
       dispatch({ type: "loaded" });
       try {
-        const res = await fetch(`${BASE_URL}/api/cities/${id}`);
+        const res = await fetch(`${BASE_URL}/cities/${id}`);
         const data = await res.json();
         dispatch({ type: "city/loaded", payload: data });
       } catch (error) {
@@ -104,19 +104,22 @@ function CityProvider({ children }) {
     dispatch({ type: "loaded" });
 
     try {
-      const res = await fetch(`${BASE_URL}/api/cities`, {
+      const res = await fetch(`${BASE_URL}/cities`, {
         method: "POST",
         body: JSON.stringify(newCity),
         headers: {
           "Content-Type": "application/json",
         },
       });
+      if (!res.ok) {
+        throw new Error(`HTTP error! Status: ${res.status}`);
+      }
       const data = await res.json();
       dispatch({ type: "city/created", payload: data });
-    } catch {
+    } catch (error) {
       dispatch({
         type: "rejected",
-        payload: "There was an eroor creaating city...",
+        payload: `There was an error creating city: ${error.message}`,
       });
     }
   }
@@ -124,7 +127,7 @@ function CityProvider({ children }) {
   async function deleteCity(id) {
     dispatch({ type: "loaded" });
     try {
-      await fetch(`${BASE_URL}/api/cities/${id}`, {
+      await fetch(`${BASE_URL}/cities/${id}`, {
         method: "DELETE",
       });
       dispatch({ type: "city/deleted", payload: id });
