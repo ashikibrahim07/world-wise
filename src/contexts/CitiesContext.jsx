@@ -65,7 +65,7 @@ function CityProvider({ children }) {
     async function fetchCities() {
       dispatch({ type: "loaded" });
       try {
-        const res = await fetch(`${BASE_URL}/cities`);
+        const res = await fetch(`${BASE_URL}/api/cities`);
         if (!res.ok) {
           throw new Error(`HTTP error! Status: ${res.status}`);
         }
@@ -87,7 +87,7 @@ function CityProvider({ children }) {
       if (!id || id === currentCity.id) return;
       dispatch({ type: "loaded" });
       try {
-        const res = await fetch(`${BASE_URL}/cities/${id}`);
+        const res = await fetch(`${BASE_URL}/api/cities/${id}`);
         const data = await res.json();
         dispatch({ type: "city/loaded", payload: data });
       } catch (error) {
@@ -104,7 +104,7 @@ function CityProvider({ children }) {
     dispatch({ type: "loaded" });
 
     try {
-      const res = await fetch(`${BASE_URL}/cities`, {
+      const res = await fetch(`${BASE_URL}/api/cities`, {
         method: "POST",
         body: JSON.stringify(newCity),
         headers: {
@@ -124,7 +124,7 @@ function CityProvider({ children }) {
   async function deleteCity(id) {
     dispatch({ type: "loaded" });
     try {
-      await fetch(`${BASE_URL}/cities/${id}`, {
+      await fetch(`${BASE_URL}/api/cities/${id}`, {
         method: "DELETE",
       });
       dispatch({ type: "city/deleted", payload: id });
