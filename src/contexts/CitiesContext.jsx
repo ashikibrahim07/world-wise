@@ -8,7 +8,10 @@ import {
   useCallback,
 } from "react";
 
-const BASE_URL = "https://world-wise-plum-psi.vercel.app";
+const BASE_URL =
+  window.location.hostname === "localhost"
+    ? "http://localhost:8000"
+    : "https://world-wise-plum-psi.vercel.app";
 
 const CitiesContext = createContext();
 
@@ -63,12 +66,16 @@ function CityProvider({ children }) {
       dispatch({ type: "loaded" });
       try {
         const res = await fetch(`${BASE_URL}/cities`);
+        if (!res.ok) {
+          throw new Error(`HTTP error! Status: ${res.status}`);
+        }
         const data = await res.json();
         dispatch({ type: "cities/loaded", payload: data });
-      } catch {
+      } catch (error) {
+        console.error("Fetch cities error:", error);
         dispatch({
           type: "rejected",
-          payload: "There was an eroor loading data...",
+          payload: "There was an error loading data...",
         });
       }
     }
@@ -77,20 +84,20 @@ function CityProvider({ children }) {
 
   const getCity = useCallback(
     async function getCity(id) {
-      if (id === currentCity.id) return;
+      if (!id || id === currentCity.id) return;
       dispatch({ type: "loaded" });
       try {
         const res = await fetch(`${BASE_URL}/cities/${id}`);
         const data = await res.json();
         dispatch({ type: "city/loaded", payload: data });
-      } catch {
+      } catch (error) {
         dispatch({
           type: "rejected",
-          payload: "There was an eroor loading city...",
+          payload: `Error loading city with ID ${id}: ${error.message}`,
         });
       }
     },
-    [currentCity.id]
+    [currentCity?.id]
   );
 
   async function createCity(newCity) {
