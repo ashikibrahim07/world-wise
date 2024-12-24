@@ -44,6 +44,7 @@ To run the project locally:
 Feel free to reach out for collaborations or inquiries:
 
 Email: ashikibrahim7777@gmail.com
+
 LinkedIn: [LinkedIn Profile](https://www.linkedin.com/in/ashik-ibrahim-s/)
 
 ## License
