@@ -10,7 +10,8 @@ Worldwise is a sleek, interactive web application designed for travel enthusiast
 
 ## Technologies Used  
 - **React.js**: Core framework for building the application.  
-- **React Leaflet**: For interactive map-based visualizations.  
+- **React Leaflet**: For interactive map-based visualizations.
+- **React Date Picker**: A flexible and customizable date picker component used for selecting dates.
 - **CSS Modules**: Modular and scoped styling for clean code.  
 
 ## Live Demo  
