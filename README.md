@@ -41,6 +41,8 @@ To run the project locally:
 
 /public: Static assets such as images and icons.
 
+/api: Contains cities.js (sample cities)
+
 ## Contact
 Feel free to reach out for collaborations or inquiries:
 
