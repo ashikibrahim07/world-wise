@@ -1,4 +1,4 @@
-# Worldwise  
+# Worldwise  🌍
 
 Worldwise is a sleek, interactive web application designed for travel enthusiasts to explore and manage travel-related information visually. Powered by React and modern libraries, the app features an intuitive interface and engaging map-based functionality to enhance the travel experience.  
 
