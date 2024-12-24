@@ -38,6 +38,7 @@ To run the project locally:
 
 ## Project Structure
 /src: Contains all the main source code, including components and styles.
+
 /public: Static assets such as images and icons.
 
 ## Contact
