@@ -23,17 +23,17 @@ To run the project locally:
    git clone https://github.com/ashikibrahim07/world-wise.git
     ```
 2. Navigate to the project directory:
-  ```bash
-  cd world-wise
-  ```
+     ```bash
+     cd world-wise
+     ```
 3. Install dependencies:
-  ```bash
-  npm install
-  ```
+     ```bash
+     npm install
+     ```
 4. Start the development server:
-  ```bash
-  npm run dev
-  ```
+     ```bash
+     npm run dev
+     ```
 5. Open your browser and navigate to the local development URL provided by Vite (e.g., http://localhost:5173).
 
 ## Project Structure
