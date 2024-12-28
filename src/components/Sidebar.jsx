@@ -7,7 +7,9 @@ import SidebarFooter from "./SidebarFooter";
 function Sidebar() {
   return (
     <div className={styles.sidebar}>
-      <Logo />
+      <a href="/">
+        <Logo />
+      </a>
       <AppNav />
 
       <Outlet />

@@ -13,15 +13,16 @@ export default function Product() {
         <div>
           <h2>About WorldWide.</h2>
           <p>
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo est
-            dicta illum vero culpa cum quaerat architecto sapiente eius non
-            soluta, molestiae nihil laborum, placeat debitis, laboriosam at fuga
-            perspiciatis?
+            Worldwise, an interactive map-based application that allows users to
+            explore countries around the world and discover their key
+            demographics. This platform is designed to provide users with
+            valuable insights into different nations, helping them understand
+            the global landscape in a fun and engaging way.
           </p>
           <p>
-            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Corporis
-            doloribus libero sunt expedita ratione iusto, magni, id sapiente
-            sequi officiis et.
+            Worldwise is not just a map; it's a gateway to understanding the
+            diverse and rich cultures that make up our world. Explore, learn,
+            and get to know the globe like never before! 🌎
           </p>
         </div>
       </section>
