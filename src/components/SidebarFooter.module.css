@@ -1,5 +1,6 @@
 .footer {
   margin-top: auto;
+  margin-bottom: 2rem;
 }
 
 .copyright {
@@ -7,8 +8,16 @@
   color: var(--color-light--1);
   cursor: pointer;
   text-decoration: none;
+  display: block;
 }
 
 .copyright:hover {
   color: var(--color-light--2);
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .footer {
+    margin-bottom: 6rem;
+  }
 }

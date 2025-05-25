@@ -9,6 +9,22 @@
   height: 100%;
 }
 
+/* Position button styles */
+.mapContainer button {
+  position: absolute;
+  bottom: 4rem;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .mapContainer button {
+    bottom: 15rem;
+  }
+}
+
 /* Here we want to style classes that are coming from leaflet. So we want CSS Modules to give us the ACTUAL classnames, not to add some random ID to them, because then they won't match the classnames defined inside the map. The solution is to define these classes as GLOBAL */
 :global(.leaflet-popup .leaflet-popup-content-wrapper) {
   background-color: var(--color-dark--1);
