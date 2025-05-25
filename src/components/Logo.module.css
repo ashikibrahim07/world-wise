@@ -1,4 +1,9 @@
 .logo {
-  height: 5.2rem;
+  max-height: 5.2rem;
+  height: auto;
+  width: auto;
+  max-width: 100%;
   cursor: pointer;
+  display: block;
+  object-fit: contain;
 }

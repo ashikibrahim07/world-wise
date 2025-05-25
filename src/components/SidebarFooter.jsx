@@ -4,9 +4,9 @@ function SidebarFooter() {
   return (
     <>
       <footer className={styles.footer}>
-        <p className={styles.copyright} href="https://ashik-ibrahim.vercel.app/" target="_blank" rel="noopener noreferrer">
+        <a className={styles.copyright} href="https://ashik-ibrahim.vercel.app/" target="_blank" rel="noopener noreferrer">
           Made with ❤️ by Ashik Ibrahim S.
-        </p>
+        </a>
       </footer>
     </>
   );

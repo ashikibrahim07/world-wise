@@ -6,7 +6,7 @@
 
 .product section {
   width: clamp(80rem, 80%, 90rem);
-  margin: 6rem auto;
+  margin: 14rem auto;
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 7rem;

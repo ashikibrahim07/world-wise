@@ -20,7 +20,7 @@ export default function Product() {
             the global landscape in a fun and engaging way.
           </p>
           <p>
-            Worldwise is not just a map; it's a gateway to understanding the
+            Worldwise is not just a map; it&apos;s a gateway to understanding the
             diverse and rich cultures that make up our world. Explore, learn,
             and get to know the globe like never before! 🌎
           </p>

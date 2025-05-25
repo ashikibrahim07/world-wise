@@ -5,11 +5,13 @@ import Logo from "./Logo";
 const PageNav = () => {
   return (
     <nav className={styles.nav}>
+      <div className={styles.logo}>
       <Logo />
+      </div>
       <ul>
-        <li>
+        {/* <li>
           <NavLink to="/pricing">Pricing</NavLink>
-        </li>
+        </li> */}
         <li>
           <NavLink to="/product">Product</NavLink>
         </li>
