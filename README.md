@@ -19,6 +19,7 @@ Experience the Worldwise app here: [Live Demo](https://world-wise-plum-psi.verce
 
 ## Installation and Setup  
 To run the project locally:  
+
 1. Clone the repository:  
    ```bash
    git clone https://github.com/ashikibrahim07/world-wise.git
