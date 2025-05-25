@@ -1,4 +1,4 @@
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import styles from "./Map.module.css";
 import {
   MapContainer,
@@ -9,14 +9,16 @@ import {
   useMapEvent,
 } from "react-leaflet";
 import { useEffect, useState } from "react";
+import PropTypes from "prop-types";
 import { useCities } from "../contexts/CitiesContext";
 import { useGeolocation } from "../hooks/useGeoLocation";
 import Button from "./Button";
 import { useUrlPosition } from "../hooks/useUrlPosition";
+import { DEFAULT_POSITION } from "../constants";
 
 function Map() {
   const { cities } = useCities();
-  const [mapPosition, setMapPosition] = useState([40, 0]);
+  const [mapPosition, setMapPosition] = useState(DEFAULT_POSITION);
 
   const {
     isLoading: isLoadingPositon,
@@ -72,12 +74,15 @@ function Map() {
     </div>
   );
 }
-
 function ChangeCenter({ position }) {
   const map = useMap();
   map.setView(position);
   return null;
 }
+
+ChangeCenter.propTypes = {
+  position: PropTypes.arrayOf(PropTypes.number).isRequired,
+};
 
 function DetectClick() {
   const navigate = useNavigate();
