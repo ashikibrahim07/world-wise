@@ -31,3 +31,50 @@
   color: var(--color-light--1);
   margin-bottom: 2.5rem;
 }
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+  .homepage {
+    padding: 2rem 3rem;
+  }
+
+  .homepage h1 {
+    font-size: 3.5rem;
+  }
+
+  .homepage h2 {
+    font-size: 1.6rem;
+    width: 95%;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .homepage {
+    padding: 1.5rem 2rem;
+  }
+
+  .homepage h1 {
+    font-size: 2.8rem;
+  }
+
+  .homepage h2 {
+    font-size: 1.4rem;
+    width: 100%;
+  }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+  .homepage {
+    padding: 1rem;
+  }
+
+  .homepage h1 {
+    font-size: 2.2rem;
+  }
+
+  .homepage h2 {
+    font-size: 1.2rem;
+  }
+}

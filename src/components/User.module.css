@@ -13,11 +13,14 @@
   display: flex;
   align-items: center;
   gap: 1.6rem;
+  transition: all 0.3s ease;
 }
 
 .user img {
   border-radius: 100px;
   height: 4rem;
+  width: 4rem;
+  object-fit: cover;
 }
 
 .user button {
@@ -31,4 +34,72 @@
   font-weight: 700;
   text-transform: uppercase;
   cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.user button:hover {
+  background-color: var(--color-brand--1);
+  color: var(--color-dark--0);
+}
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+  .user {
+    top: 3.5rem;
+    right: 3.5rem;
+    padding: 0.8rem 1.2rem;
+    font-size: 1.4rem;
+  }
+
+  .user img {
+    height: 3.5rem;
+    width: 3.5rem;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .user {
+    top: 3rem;
+    right: 3rem;
+    padding: 0.7rem 1rem;
+    font-size: 1.3rem;
+    gap: 1.2rem;
+  }
+
+  .user img {
+    height: 3.2rem;
+    width: 3.2rem;
+  }
+
+  .user button {
+    padding: 0.5rem 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+  .user {
+    top: 2.5rem;
+    right: 1.5rem;
+    padding: 0.6rem 0.8rem;
+    font-size: 1.2rem;
+    gap: 1rem;
+  }
+
+  .user img {
+    height: 2.8rem;
+    width: 2.8rem;
+  }
+
+  .user button {
+    padding: 0.4rem 0.8rem;
+    font-size: 1rem;
+  }
+
+  /* Hide welcome text on very small screens */
+  .user span {
+    display: none;
+  }
 }

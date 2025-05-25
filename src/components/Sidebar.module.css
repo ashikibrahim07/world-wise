@@ -5,5 +5,35 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: calc100vh - 4.8rem;
+  height: 100vh;
+  width: 100%;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+  .sidebar {
+    flex-basis: 30rem;
+    padding: 2.5rem 3rem 3rem 3rem;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .sidebar {
+    flex-basis: auto;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-left: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: -0.5rem 0 2rem rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+  .sidebar {
+    padding: 1.5rem;
+  }
 }

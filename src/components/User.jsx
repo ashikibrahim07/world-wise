@@ -13,9 +13,20 @@ function User() {
 
   return (
     <div className={styles.user}>
-      <img src={user.avatar} alt={user.name} />
-      <span>Welcome, {user.name}</span>
-      <button onClick={handleClick}>Logout</button>
+      <img 
+        src={user.avatar} 
+        alt={user.name} 
+        title={user.name}
+      />
+      <span className={styles.welcomeText}>
+        Welcome, {user.name}
+      </span>
+      <button 
+        onClick={handleClick}
+        aria-label="Logout"
+      >
+        Logout
+      </button>
     </div>
   );
 }

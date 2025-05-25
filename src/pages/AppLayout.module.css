@@ -4,3 +4,130 @@
   display: flex;
   position: relative;
 }
+
+.mainContent {
+  flex: 1;
+  position: relative;
+  height: 100%;
+}
+
+/* Mobile menu button */
+.mobileMenuBtn {
+  display: none;
+  position: fixed;
+  top: 8rem;
+  right: 2rem;
+  z-index: 1000;
+  background: var(--color-dark--1);
+  border: none;
+  border-radius: 25%;
+  width: 5rem;
+  height: 5rem;
+  cursor: pointer;
+  padding: 0.8rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 0.8rem 2.4rem rgba(36, 42, 46, 0.5);
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  width: 100%;
+  height: 2px;
+  margin-left: -5px;
+  background: var(--color-light--2);
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  background: var(--color-light--2);
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(8px);
+}
+
+/* Overlay for mobile */
+.overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+/* Tablet styles */
+@media screen and (max-width: 1024px) {
+  .sidebarContainer {
+    width: 30rem;
+    padding: 2.5rem 3rem 3rem 3rem;
+  }
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .mobileMenuBtn {
+    display: block;
+  }
+
+  .sidebarContainer {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 80%;
+    max-width: 34rem;
+    height: 100vh;
+    z-index: 999;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebarContainer.open {
+    transform: translateX(0);
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  /* Hamburger animation */
+  .mobileMenuBtn.active .hamburger {
+    background: transparent;
+  }
+
+  .mobileMenuBtn.active .hamburger::before {
+    transform: rotate(45deg);
+  }
+
+  .mobileMenuBtn.active .hamburger::after {
+    transform: rotate(-45deg);
+  }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+  .mobileMenuBtn {
+    top: 7rem;
+    right: 1.5rem;
+    width: 3.5rem;
+    height: 3.5rem;
+  }
+
+  .sidebarContainer {
+    width: 100%;
+    max-width: none;
+  }
+}

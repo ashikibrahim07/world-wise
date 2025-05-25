@@ -3,6 +3,7 @@
   align-items: center;
   justify-content: space-between;
   padding: 1rem 2rem;
+  position: relative;
 }
 
 .nav > :first-child {
@@ -19,7 +20,7 @@
   cursor: pointer;
 }
 
-.nav ul {
+.navLinks {
   list-style: none;
   display: flex;
   align-items: center;
@@ -53,4 +54,103 @@ a.ctaLink:visited {
 a.ctaLink:hover,
 a.ctaLink:active {
   background-color: var(--color-brand--1);
+}
+
+/* Mobile menu button */
+.mobileMenuBtn {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1000;
+}
+
+.hamburger {
+  display: block;
+  position: relative;
+  width: 24px;
+  height: 2px;
+  background: var(--color-light--2);
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--color-light--2);
+  transition: all 0.3s ease-in-out;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(8px);
+}
+
+/* Mobile styles */
+@media screen and (max-width: 768px) {
+  .mobileMenuBtn {
+    display: block;
+  }
+
+  .navLinks {
+    position: fixed;
+    top: 0;
+    right: -100%;
+    width: 70%;
+    height: 100vh;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3rem;
+    transition: right 0.3s ease-in-out;
+    z-index: 999;
+
+    /* Glassmorphism styles for mobile menu */
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  .showMenu {
+    right: 0;
+  }
+
+  .showMenu + .mobileMenuBtn .hamburger {
+    background: transparent;
+  }
+
+  .showMenu + .mobileMenuBtn .hamburger::before {
+    transform: rotate(45deg);
+  }
+
+  .showMenu + .mobileMenuBtn .hamburger::after {
+    transform: rotate(-45deg);
+  }
+
+  .nav a:link,
+  .nav a:visited {
+    font-size: 1.3rem;
+  }
+}
+
+/* Small mobile styles */
+@media screen and (max-width: 480px) {
+  .nav {
+    padding: 1rem;
+  }
+
+  .logo {
+    max-height: 4rem;
+  }
+
+  .navLinks {
+    width: 65%;
+  }
 }

@@ -12,11 +12,21 @@ export default function Login() {
   // PRE-FILL FOR DEV PURPOSES
   const [email, setEmail] = useState("jack@example.com");
   const [password, setPassword] = useState("qwerty");
+  const [isLoading, setIsLoading] = useState(false);
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
+    setIsLoading(true);
 
-    if (email && password) login(email, password);
+    if (email && password) {
+      try {
+        await login(email, password);
+      } catch (error) {
+        console.error("Login failed:", error);
+      } finally {
+        setIsLoading(false);
+      }
+    }
   }
 
   useEffect(() => {
@@ -34,6 +44,10 @@ export default function Login() {
             id="email"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
+            required
+            autoComplete="email"
+            placeholder="Enter your email"
+            disabled={isLoading}
           />
         </div>
 
@@ -44,11 +58,17 @@ export default function Login() {
             id="password"
             onChange={(e) => setPassword(e.target.value)}
             value={password}
+            required
+            autoComplete="current-password"
+            placeholder="Enter your password"
+            disabled={isLoading}
           />
         </div>
 
         <div>
-          <Button type="primary">Login</Button>
+          <Button type="primary" disabled={isLoading}>
+            {isLoading ? "Logging in..." : "Login"}
+          </Button>
         </div>
       </form>
     </main>
