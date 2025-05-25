@@ -4,8 +4,8 @@ function SidebarFooter() {
   return (
     <>
       <footer className={styles.footer}>
-        <p className={styles.copyright}>
-          &copy; Copyright {new Date().getFullYear()} by WorldWise Inc.
+        <p className={styles.copyright} href="https://ashik-ibrahim.vercel.app/" target="_blank" rel="noopener noreferrer">
+          Made with ❤️ by Ashik Ibrahim S.
         </p>
       </footer>
     </>
