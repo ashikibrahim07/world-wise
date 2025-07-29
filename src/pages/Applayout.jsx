@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
 import Sidebar from "../components/Sidebar";
 import Map from "../components/Map";
 
@@ -7,6 +8,15 @@ import User from "../components/User";
 
 function Applayout() {
   const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+  const location = useLocation();
+
+  useEffect(() => {
+    const params = new URLSearchParams(location.search);
+    const openSidebar = params.get('openSidebar');
+    if (openSidebar === 'true') {
+      setIsSidebarOpen(true);
+    }
+  }, [location.search]);
 
   const toggleSidebar = () => {
     setIsSidebarOpen(!isSidebarOpen);

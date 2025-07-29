@@ -86,9 +86,18 @@ ChangeCenter.propTypes = {
 
 function DetectClick() {
   const navigate = useNavigate();
+  const isMobile = window.innerWidth <= 768;
 
   useMapEvent({
-    click: (e) => navigate(`form?lat=${e.latlng.lat}&lng=${e.latlng.lng}`),
+    click: (e) => {
+      const params = new URLSearchParams();
+      params.append('lat', e.latlng.lat);
+      params.append('lng', e.latlng.lng);
+      if (isMobile) {
+        params.append('openSidebar', 'true');
+      }
+      navigate(`form?${params.toString()}`);
+    },
   });
 }
 

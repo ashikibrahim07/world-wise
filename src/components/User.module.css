@@ -81,8 +81,8 @@
 /* Small mobile styles */
 @media screen and (max-width: 480px) {
   .user {
-    top: 2.5rem;
-    right: 1.5rem;
+    top: 0.5rem;
+    right: 0.5rem;
     padding: 0.6rem 0.8rem;
     font-size: 1.2rem;
     gap: 1rem;
